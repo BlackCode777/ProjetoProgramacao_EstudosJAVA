@@ -1,0 +1,14 @@
+{
+        "configurations": [
+                {
+                        "type": "java",
+                        "name": "Spring Boot-PetscanfinderApplication<petscanfinder>",
+                        "request": "launch",
+                        "cwd": "${workspaceFolder}",
+                        "mainClass": "com.vscode.springboot.petscanfinder.PetscanfinderApplication",
+                        "projectName": "petscanfinder",
+                        "args": "",
+                        "envFile": "${workspaceFolder}/.env"
+                }
+        ]
+}

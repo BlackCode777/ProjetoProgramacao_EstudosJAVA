@@ -1,0 +1,18 @@
+// importações
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import com.vscode.springboot.petscanfinder.model.ClientePetScanFinder;
+
+// Classe de teste para a classe ClientePetScanFinder
+@SpringBootTest
+public class ClientePetScanFinder_Model_Teste {
+
+        // Teste de criação de objeto
+        @Test
+        public void testCreateObject() {
+                ClientePetScanFinder cliente = new ClientePetScanFinder();
+                assertNotNull(cliente);
+        }
+
+}
