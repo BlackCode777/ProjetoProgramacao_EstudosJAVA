@@ -2,6 +2,8 @@ package com.vscode.springboot.petscanfinder.model;
 
 import java.time.LocalDate;
 
+import org.springframework.data.elasticsearch.annotations.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,10 +11,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientePetScanFinder {
+@Document(indexName = "cliente")
+public class ClientePetScanFinder implements java.io.Serializable {
 
-        // Atributos do cliente
-        private int idCliente;
+        private static final long serialVersionUID = 1L;
+
+        // Atributos do com elasticsearch
+        private Long idCliente;
         private String nomeCliente;
         private String emailCliente;
         private String senhaCliente;

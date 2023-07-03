@@ -3,6 +3,8 @@ package com.vscode.springboot.petscanfinder.model;
 
 import java.time.LocalDate;
 
+import org.springframework.data.elasticsearch.annotations.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,11 +13,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProdutoPetScanFinder_Model implements java.io.Serializable {
+@Document(indexName = "produto")
+public class ProdutoPetScanFinderModel implements java.io.Serializable {
 
         private static final long serialVersionUID = 1L;
 
-        private int idProduto;
+        private Long idProduto;
         private String nomeProduto;
         private String descricaoProduto;
         private Float precoProduto;
