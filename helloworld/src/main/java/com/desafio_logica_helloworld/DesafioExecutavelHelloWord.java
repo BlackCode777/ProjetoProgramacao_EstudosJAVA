@@ -1,6 +1,6 @@
 
 /* criar o pacote */
-package main.java.com.desafio_logica_helloworld;
+package com.desafio_logica_helloworld;
 
 public class DesafioExecutavelHelloWord {    
     
