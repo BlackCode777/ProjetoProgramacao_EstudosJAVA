@@ -2,6 +2,12 @@
         "configurations": [
                 {
                         "type": "java",
+                        "name": "App",
+                        "request": "launch",
+                        "mainClass": "$package.App"
+                },
+                {
+                        "type": "java",
                         "name": "Section_2_A_Saida_basica_de_datas",
                         "request": "launch",
                         "mainClass": "DataEmJava_2.Section_2_A_Saida_basica_de_datas"
