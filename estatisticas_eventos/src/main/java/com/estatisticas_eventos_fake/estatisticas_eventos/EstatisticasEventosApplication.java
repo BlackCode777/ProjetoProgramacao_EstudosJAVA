@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EstatisticasEventosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EstatisticasEventosApplication.class, args);
+		SpringApplication
+				.run(EstatisticasEventosApplication.class, args);
 	}
 
 }
