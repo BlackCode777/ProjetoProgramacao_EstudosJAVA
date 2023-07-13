@@ -24,6 +24,26 @@ public class Servico {
     public Servico() {
     }
 
+    /* método set do id */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /* Método get do id */
+    public Long getId() {
+        return id;
+    }
+
+    /* método set da desc */
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    /* Método get da desc */
+    public String getDesc() {
+        return desc;
+    }
+
     /* Métodos getter / setter */
     public Long getIdAgenda() {
         return idAgenda;
