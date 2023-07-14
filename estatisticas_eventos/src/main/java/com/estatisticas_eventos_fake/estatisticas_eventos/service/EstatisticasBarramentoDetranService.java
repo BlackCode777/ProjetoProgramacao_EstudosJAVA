@@ -9,6 +9,7 @@ import java.util.TreeMap;
 import org.json.JSONObject;
 
 import com.estatisticas_eventos_fake.estatisticas_eventos.dao.EstatisticasEventosDao;
+import com.estatisticas_eventos_fake.estatisticas_eventos.dao.RestElasticSearchTempleteDao;
 import com.estatisticas_eventos_fake.estatisticas_eventos.domain.Orgao;
 import com.estatisticas_eventos_fake.estatisticas_eventos.domain.Servico;
 import com.estatisticas_eventos_fake.estatisticas_eventos.model.Barramento;
@@ -16,6 +17,7 @@ import com.estatisticas_eventos_fake.estatisticas_eventos.token.BuscarChave;
 import com.estatisticas_eventos_fake.estatisticas_eventos.util.BiServicoUtil;
 import com.estatisticas_eventos_fake.estatisticas_eventos.util.DateUtil;
 import com.estatisticas_eventos_fake.estatisticas_eventos.util.PostoUtil;
+import com.estatisticas_eventos_fake.estatisticas_eventos.util.QueryBarramentosUtil;
 
 public class EstatisticasBarramentoDetranService {
 
