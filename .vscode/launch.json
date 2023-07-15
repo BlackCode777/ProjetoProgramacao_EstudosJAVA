@@ -2,6 +2,12 @@
         "configurations": [
                 {
                         "type": "java",
+                        "name": "App",
+                        "request": "launch",
+                        "mainClass": "com.bookpauldeitel.App"
+                },
+                {
+                        "type": "java",
                         "name": "EstatisticasEventosApplication",
                         "request": "launch",
                         "mainClass": "com.estatisticas_eventos_fake.estatisticas_eventos.EstatisticasEventosApplication"

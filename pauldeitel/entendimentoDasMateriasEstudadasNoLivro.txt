@@ -1,0 +1,8 @@
+********************************************************
+************* Matérias Estudadas ***********************
+********************************************************
+Inferência de tipo com a notação <> - Notação Losango
+    - especificam o tipo armazenado na ArrayList (isto é, String) à esquerda e à direita das instruções de inicia-
+lização
+    EXEMPLO DE USO:
+        List<String> list = new ArrayList<>();
