@@ -118,11 +118,74 @@ public class RestElasticSearchTempleteDao {
     public static void bulk() {
     }
 
-    public static void deleted() {
+    public static void deleted(String uriDestino, boolean autenticacao) {
+        StringBuilder uri = new StringBuilder(); // cria objeto vazio em memória
+        uri.append(uriDestino);
+
+        try {
+
+            HttpHeaders headers = new HttpHeaders(); // cria objeto vazio em memória
+            headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON)); // monta o cabeçalho da requisição
+            headers.setContentType(MediaType.APPLICATION_JSON);
+
+            if (autenticacao) {// verifica se a autenticação existe
+                headers.setBasicAuth("elastic", "VK6pA8uS?f&");
+            }
+            HttpEntity<String> entity = new HttpEntity<>(headers); // encapsula o corpo da requisição
+            ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.DELETE, entity,
+                    String.class); // faz a chamada ao Elasticsearch
+            switch (response.getStatusCode()) {
+                case OK:
+                    return;
+                case CREATED:
+                    Thread.sleep(500);
+                    return;
+                case NOT_FOUND:
+                    System.out.println(response.getBody());
+                    return;
+                case UNAUTHORIZED:
+                    Thread.sleep(1800000);
+                    System.out.println(response.getBody());
+                    return;
+                case BAD_GATEWAY:
+                    Thread.sleep(1800000);
+                    return;
+                default:
+                    System.out.println(response.getBody());
+                    return;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
-    public static JSONObject consultaRegistro() {
-        return null;
-    }
+    public static JSONObject consultaRegistro(String uriDestino, String token, String consulta) {
 
+        StringBuilder uri = new StringBuilder(); // cria um objeto vazio em memória
+        uri.append(uriDestino); // adiciona a URL base (urlOrigem)
+
+        try {
+
+            HttpHeaders headers = new HttpHeaders(); // cria um objeto vazio em memória de HttpHeaders
+            headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set(HttpHeaders.AUTHORIZATION, "Bearer" + token);
+            HttpEntity<String> entity = new HttpEntity<>(consulta, headers);
+            ResponseEntity<String> response = restTemplate.exchange(uri.toString(), HttpMethod.POST, entity,
+                    String.class);
+
+            switch (response.getStatusCode()) {
+                case OK:
+                    return new JSONObject(response.getBody());
+                default:
+                    System.out.println(response.getBody());
+                    return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

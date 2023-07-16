@@ -14,4 +14,8 @@ public class PostoUtil {
     public static void populaMapaPostoEvento() {
     }
 
+    public static Posto getPosto(Integer idPosto) {
+        return null;
+    }
+
 }

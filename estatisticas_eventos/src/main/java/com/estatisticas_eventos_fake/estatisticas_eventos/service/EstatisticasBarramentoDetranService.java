@@ -16,6 +16,7 @@ import com.estatisticas_eventos_fake.estatisticas_eventos.model.Barramento;
 import com.estatisticas_eventos_fake.estatisticas_eventos.token.BuscarChave;
 import com.estatisticas_eventos_fake.estatisticas_eventos.util.BiServicoUtil;
 import com.estatisticas_eventos_fake.estatisticas_eventos.util.DateUtil;
+import com.estatisticas_eventos_fake.estatisticas_eventos.util.ParseBarramentoUtil;
 import com.estatisticas_eventos_fake.estatisticas_eventos.util.PostoUtil;
 import com.estatisticas_eventos_fake.estatisticas_eventos.util.QueryBarramentosUtil;
 
