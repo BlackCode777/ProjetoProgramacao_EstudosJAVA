@@ -20,5 +20,11 @@ lização
     - addAll > Acrescenta todos os elementos em um array a uma Collection.
     - frequency > Calcula quantos elementos da coleção são iguais ao elemento especificado.
     - disjoint > Acrescenta todos os elementos em um array a uma collection.
-    
+
+    # DEFINIÇÂO DOS ALGORITMOS
+        - sort -
+        - Classificando na ordem crescente - 
+        > Método Collections sort -> O método sort ordenar os elementos de uma List em ordem crescente,
+            O  método  sort  realiza  uma  classificação  por  intercalação  iterativa.
+            EXEMPLO : Collection.sort(list);
 
