@@ -4,7 +4,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 
 import org.json.JSONObject;
-import org.springframework.data.jpa.repository.query.QueryUtils;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -12,6 +11,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
+
+import com.estatisticas_eventos_fake.estatisticas_eventos.util.QueryUtils;
 
 public class RestElasticSearchTempleteDao {
 

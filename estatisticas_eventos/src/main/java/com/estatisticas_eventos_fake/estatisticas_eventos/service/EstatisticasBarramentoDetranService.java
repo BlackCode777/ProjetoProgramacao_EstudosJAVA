@@ -124,12 +124,11 @@ public class EstatisticasBarramentoDetranService {
                     // objetosI =
                     // RestElasticSearchTempleteDao.consultaRegistro("http://eventos-commons.sp.gov.br//eventos-commons-api/api/elastic/sa_eventos_pesquisa/_search",
                     objetosI = RestElasticSearchTempleteDao.consultaRegistro(
-                            "http://eventos-commons.sp.gov.br//eventos-commons-api/api/elastic/sa_eventos_pesquisa/_search",
+                            "", // http://eventos-commons.sp.gov.br//eventos-commons-api/api/elastic/sa_eventos_pesquisa/_search
                             BuscarChave.getTokenEventoCommons(
-                                    "http://eventos-commons.sp.gov.br//eventos-commons-api/estatistica/auth"),
+                                    ""), // http://eventos-commons.sp.gov.br//eventos-commons-api/estatistica/auth
                             QueryBarramentosUtil.getQueryDetran(inicio, fim, s.getId()));
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 
