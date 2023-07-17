@@ -28,3 +28,12 @@ lização
             O  método  sort  realiza  uma  classificação  por  intercalação  iterativa.
             EXEMPLO : Collection.sort(list);
 
+    # 16.7.4  Método  binarySearch Algorithm
+        - Esse método localiza um objeto em uma List (por exemplo, uma LinkedList ou uma ArrayList). 
+            Se o objeto for encontrado, seu índice é retornado. Se o objeto não for localizado, 
+            binarySearch  retorna  um  valor  negativo.  O  método  binarySearch  determina  esse  
+            valor  negativo  primeiro  calculando  o  ponto  de inserção e tornando seu sinal negativo.
+            Então, binarySearch subtrai 1 do ponto de inserção para obter o valor de retorno, que 
+            garante que o método binarySearch retorna números positivos (>= 0) se e somente se o objeto 
+            for localizado.
+
