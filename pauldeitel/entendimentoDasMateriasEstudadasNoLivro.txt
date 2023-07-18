@@ -23,8 +23,8 @@ lização
 
     # DEFINIÇÂO DOS ALGORITMOS
         - sort -
-        - Classificando na ordem crescente - 
-        > Método Collections sort -> O método sort ordenar os elementos de uma List em ordem crescente,
+        - Classificando na ordem crescente 
+        - Método Collections sort -> O método sort ordenar os elementos de uma List em ordem crescente,
             O  método  sort  realiza  uma  classificação  por  intercalação  iterativa.
             EXEMPLO : Collection.sort(list);
 
@@ -36,4 +36,7 @@ lização
             Então, binarySearch subtrai 1 do ponto de inserção para obter o valor de retorno, que 
             garante que o método binarySearch retorna números positivos (>= 0) se e somente se o objeto 
             for localizado.
+    # 16.8 Classe Stack do pacote java.util
+        - A classe Stack estende a classe Vector para implementar uma estrutura de dados de pilha. 
+        
 
