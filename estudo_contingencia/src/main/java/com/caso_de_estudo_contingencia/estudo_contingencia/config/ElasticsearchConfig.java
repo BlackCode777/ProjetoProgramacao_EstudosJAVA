@@ -32,7 +32,7 @@ public class ElasticsearchConfig extends AbstractElasticsearchConfiguration {
     private String password;
 
     @Override
-    @Bean(destroyMethod = "close")
+    @Bean(destroyMethod = "close") // RestClients.create() > esta função estava me dando um problema com importe
     public RestHighLevelClient elasticsearchClient() {
         return RestClients.create((ClientConfiguration) ClientConfiguration.builder().connectedTo(esHost)).rest(); // ClientConfiguration.builder().connectedTo(esHost).build()
     }

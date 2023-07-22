@@ -1,5 +1,61 @@
 server:
     port: 8080
+    servlet:
+        context-path: /
+        session:
+          timeout: 15m
+    error:
+        whitelabel:
+            enabled: false
+            
+contingencia:
+ relacionamento:
+   client_id: relacionamento
+ elastic_address: http://localhost:9200
+ versao: 1.0.5
+
+security:
+  jwt:
+    token:
+      secret-key: secret-key-sistema-gestao-de-contingencia-core-1.0.0
+      expire-length: 600000
+  
+management:
+    endpoint:
+        shutdown:
+            enabled: true
+        mappings:
+            enabled: true
+        logfile:
+            enabled: true
+            external_file: sistema-contingencia.log
+        health:
+            show-details: always
+            enabled: true
+        info:
+            enabled: true
+        metrics:
+            enabled: true
+        threaddump:
+            enabled: true
+        loggers:
+            enabled: true
+        restart:
+            enabled: true
+            
+    endpoints:
+        web:
+            base-path: /
+            exposure:
+                include: "*"
+        
+logging:
+      file: sistema-contingencia.log
+      logback.rollingpolicy:
+        max-file-size: 10MB
+        max-history: 5
+
+---
 spring:
     profiles: local
     thymeleaf:
@@ -7,5 +63,223 @@ spring:
 elasticsearch:
     host: 127.0.0.1:9200
     clustername: elasticsearch
+    username: 
+    password: 
+evento_elasticsearch:
+    host: 10.200.9.214:9200
+    clustername: cadastro-unificado-cluster
     username:
     password:
+agenda:
+    initial_delay: 60000
+    fixed_delay: 600000
+    search:
+      uri: http://10.200.45.234/eagenda.api
+      uriTeste: http://10.200.45.234/eagenda.api
+carta_servicos:
+    search:
+      uri: https://gatewayapi.cartadeservicos.poupatempo.sp.gov.br/WSListaPostoPoupaTempoIntranet/get
+    token:
+      uri: https://gatewayapi.cartadeservicos.poupatempo.sp.gov.br/users/auth
+      user: anderson
+      password: relatorio
+oauth:
+    tokenURI: http://desenv.autenticador.sp.gov.br/connect/token
+    tokenURITeste: http://desenv.autenticador.sp.gov.br/connect/token
+    grant_type: client_credentials
+    services:
+      car:
+        client_id: Relacionamento.Motor
+        client_secret: 91de1044-2a84-4033-89f6-923c1844e9a3
+        scope: Car.Search Relacionamento.Motor.Search
+      atendimento:
+        client_id: Atendimento.Evento
+        client_secret: 9b22f792-dd94-4dfa-91bc-92844428de33
+        scope: Atendimento.Evento.Search
+      agenda:
+        client_id: agendasp
+        client_secret: 0e5f0b27-d9e6-44c3-b551-0128870afffb
+        scope: Car.Search Car.AgendaSP.Upsert AgendaSP.Search AgendaSP.Upsert Evento.Enviar
+      evento:
+        client_id: Simulador.Atendimento
+        client_secret: d56bbdea-50da-4490-8e46-5b3b67d03822
+        scope: Evento.Enviar
+evento:
+    uri: http://10.200.9.214:9200
+    elastic:
+      host: 10.200.9.214
+      port: 9200
+      clustername: cadastro-unificado-cluster
+car:
+  uri: http://desenv.car.api.sp.gov.br/api
+server:
+    port: 8080
+    
+---
+spring:
+    profiles: desenv
+    thymeleaf:
+        cache: false
+elasticsearch:
+    #host: 10.199.124.124:9200
+    #clustername: elasticsearch
+    #username: usurelacionamento
+    #password: $prjsrsi$
+    host: 10.199.101.218:11200
+    clustername: elastic-relacionamento
+    username:
+    password:
+agenda:
+    initial_delay: 600000
+    fixed_delay: 21600000
+    search:
+      uri: http://10.200.45.234/eagenda.api
+      uriTeste: http://10.200.45.234/eagenda.api
+carta_servicos:
+    search:
+      uri: https://gatewayapi.cartadeservicos.poupatempo.sp.gov.br/WSListaPostoPoupaTempoIntranet/get
+    token:
+      uri: https://gatewayapi.cartadeservicos.poupatempo.sp.gov.br/users/auth
+      user: anderson
+      password: relatorio
+oauth:
+    tokenURI: http://desenv.autenticador.sp.gov.br/connect/token
+    tokenURITeste: http://desenv.autenticador.sp.gov.br/connect/token
+    grant_type: client_credentials
+    services:
+      car:
+        client_id: Relacionamento.Motor
+        client_secret: 91de1044-2a84-4033-89f6-923c1844e9a3
+        scope: Car.Search Relacionamento.Motor.Search
+      atendimento:
+        client_id: Atendimento.Evento
+        client_secret: 9b22f792-dd94-4dfa-91bc-92844428de33
+        scope: Atendimento.Evento.Search
+      agenda:
+        client_id: agendasp
+        client_secret: 0e5f0b27-d9e6-44c3-b551-0128870afffb
+        scope: Car.Search Car.AgendaSP.Upsert AgendaSP.Search AgendaSP.Upsert Evento.Enviar
+      evento:
+        client_id: Simulador.Atendimento
+        client_secret: d56bbdea-50da-4490-8e46-5b3b67d03822
+        scope: Evento.Enviar
+evento:
+    uri: http://10.200.9.214:9200
+    elastic:
+      host: 10.200.9.214
+      port: 9200
+      clustername: cadastro-unificado-cluster
+car:
+  uri: http://desenv.car.api.sp.gov.br/api
+server:
+    port: 9094
+    
+---
+spring:
+    profiles: homolog
+    thymeleaf:
+        cache: false
+elasticsearch:
+    host: 10.200.77.216:9200
+    clustername: poupafila_es_homol
+    username: 
+    password:
+agenda:
+    initial_delay: 60000
+    fixed_delay: 21600000
+    search:
+      uri: http://www.eagendamento.homologacao.sp.gov.br/eagenda.api/
+      uriTeste: http://www.eagendamento.homologacao.sp.gov.br/eagenda.api/
+carta_servicos:
+    search:
+      uri: https://gatewayapi.cartadeservicos.poupatempo.sp.gov.br/WSListaPostoPoupaTempoIntranet/get
+    token:
+      uri: https://gatewayapi.cartadeservicos.poupatempo.sp.gov.br/users/auth
+      user: anderson
+      password: relatorio
+oauth:
+    tokenURI: https://homolog.autenticador.sp.gov.br/connect/token
+    tokenURITeste: https://homolog.autenticador.sp.gov.br/connect/token
+    grant_type: client_credentials
+    services:
+      car:
+        client_id: Relacionamento.Motor
+        client_secret: 91de1044-2a84-4033-89f6-923c1844e9a3
+        scope: Car.Search Relacionamento.Motor.Search
+      atendimento:
+        client_id: Atendimento.Evento
+        client_secret: 9b22f792-dd94-4dfa-91bc-92844428de33
+        scope: Atendimento.Evento.Search
+      agenda:
+        client_id: agendasp
+        client_secret: 0e5f0b27-d9e6-44c3-b551-0128870afffb
+        scope: Car.Search Car.AgendaSP.Upsert AgendaSP.Search AgendaSP.Upsert Evento.Enviar
+      evento:
+        client_id: Simulador.Atendimento
+        client_secret: d56bbdea-50da-4490-8e46-5b3b67d03822
+        scope: Evento.Enviar
+evento:
+    uri: http://10.200.241.119:9200
+    elastic:
+      host: 10.200.241.119
+      port: 9200
+      clustername: car-homolog
+car:
+  uri: http://homolog.car.api.sp.gov.br/api
+server:
+    port: 9094
+    
+---
+spring:
+    profiles: prod
+    thymeleaf:
+        cache: false
+elasticsearch:
+    host: 10.200.68.108:9200
+    clustername: poupafila_es_prod
+    username:
+    password:
+agenda:
+    initial_delay: 600000
+    fixed_delay: 21600000
+    search:
+      uri: https://www.agendasp.sp.gov.br/eagenda.api
+      uriTeste: https://www.agendasp.sp.gov.br/eagenda.api
+carta_servicos:
+    search:
+      uri: https://gatewayapi.cartadeservicos.poupatempo.sp.gov.br/WSListaPostoPoupaTempoIntranet/get
+    token:
+      uri: https://gatewayapi.cartadeservicos.poupatempo.sp.gov.br/users/auth
+      user: anderson
+      password: relatorio
+oauth:
+    tokenURI: https://www.autenticador.sp.gov.br/connect/token
+    tokenURITeste: https://www.autenticador.sp.gov.br/connect/token
+    grant_type: client_credentials
+    services:
+      car:
+        client_id: Relacionamento.Motor
+        client_secret: 91de1044-2a84-4033-89f6-923c1844e9a3
+        scope: Car.Search Relacionamento.Motor.Search
+      atendimento:
+        client_id: Atendimento.Evento
+        client_secret: 9b22f792-dd94-4dfa-91bc-92844428de33
+        scope: Atendimento.Evento.Search
+      agenda:
+        client_id: agendasp
+        client_secret: 0e5f0b27-d9e6-44c3-b551-0128870afffb
+        scope: Car.Search Car.AgendaSP.Upsert AgendaSP.Search AgendaSP.Upsert Evento.Enviar
+      evento:
+        client_id: motoreventos
+        client_secret: 548fe642-1b40-45df-96fa-96a2f3425fab
+        scope: motoreventos.Search motoreventos.Insert motoreventos.Delete motoreventos.Update Evento.enviar
+evento:
+    uri: http://10.200.84.15:9200
+    elastic:
+      host: 10.200.84.15
+      port: 9200
+      clustername: car_cluster
+car:
+  uri: https://www.car.api.sp.gov.br/api
+server:
+    port: 8080
