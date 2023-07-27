@@ -1,5 +1,7 @@
 package com.caso_de_estudo_contingencia.estudo_contingencia.api;
 
+import static java.util.Objects.*;
+
 //import static org.mockito.ArgumentMatchers.*;
 
 import java.util.List;
@@ -12,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,13 +26,9 @@ import com.caso_de_estudo_contingencia.estudo_contingencia.model.TipoContingenci
 import com.caso_de_estudo_contingencia.estudo_contingencia.repo.TipoContingenciaRepo;
 import com.caso_de_estudo_contingencia.estudo_contingencia.service.AgendamentoService;
 import com.caso_de_estudo_contingencia.estudo_contingencia.service.TipoContingenciaService;
-import com.caso_de_estudo_contingencia.estudo_contingencia.util.ParseContingenciaUtil;
-import com.caso_de_estudo_contingencia.estudo_contingencia.util.QueryUtils;
 import com.caso_de_estudo_contingencia.estudo_contingencia.util.ValidationContingenciaUtil;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.fasterxml.jackson.core.JsonParser;
-import static java.util.Objects.isNull;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/api/contingencia")
@@ -155,6 +154,24 @@ public class ContingenciaApi {
     public TipoContingencia carregarDados(String id) throws Exception {
         LOG.info("Carregando dados da contingencia: {}", id);
         return tipoContiRepo.findById(id).get();
+    }
+
+    @GetMapping(path = "/agendas/{cidadao}", produces = "application/json;charset=UTF-8")
+    public ResponseEntity<Object> obterAgendasCidadao(@PathVariable("cidadao") String cidadao) {
+        JSONObject mensagemJson = new JSONObject();
+        String mensagem;
+        try {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(agendamentoService.buscarAgendasCidadao(cidadao).toString());
+        } catch (CustomException ce) {
+            mensagemJson.put("erro", ce.getMessage());
+            return ResponseEntity.status(ce.getHttpStatus()).body(mensagemJson.toString());
+        } catch (Exception e) {
+            LOG.error("obterAgendasCidadao", e);
+            mensagem = e.getMessage() + (isNull(e.getCause()) ? "" : e.getCause().getMessage());
+            mensagemJson.put("erro", mensagem);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(mensagemJson.toString());
+        }
     }
 
 }
