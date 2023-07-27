@@ -3,11 +3,13 @@ package com.caso_de_estudo_contingencia.estudo_contingencia.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.caso_de_estudo_contingencia.estudo_contingencia.exception.CustomException;
+import com.caso_de_estudo_contingencia.estudo_contingencia.model.Contingencia;
 import com.caso_de_estudo_contingencia.estudo_contingencia.model.TipoContingencia;
 import com.caso_de_estudo_contingencia.estudo_contingencia.repo.ContingenciaRepo;
 import com.caso_de_estudo_contingencia.estudo_contingencia.repo.TipoContingenciaRepo;
@@ -70,6 +72,10 @@ public class TipoContingenciaService {
         }
 
         return false;
+    }
+
+    public JSONObject saveData(Contingencia validate) {
+        return null;
     }
 
 }
