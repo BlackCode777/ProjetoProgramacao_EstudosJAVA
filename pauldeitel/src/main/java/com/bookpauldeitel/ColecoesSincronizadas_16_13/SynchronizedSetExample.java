@@ -39,16 +39,16 @@ public class SynchronizedSetExample {
         // }
         // });
 
-        thread1.start();
-        thread2.start();
+        // thread1.start();
+        // thread2.start();
 
         // Esperando as threads terminarem
-        try {
-            thread1.join();
-            thread2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // try {
+        // thread1.join();
+        // thread2.join();
+        // } catch (InterruptedException e) {
+        // e.printStackTrace();
+        // }
 
     }
 
