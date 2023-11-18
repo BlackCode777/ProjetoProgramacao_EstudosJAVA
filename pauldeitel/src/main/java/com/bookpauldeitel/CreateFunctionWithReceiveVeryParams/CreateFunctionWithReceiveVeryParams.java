@@ -1,7 +1,6 @@
 package com.bookpauldeitel.CreateFunctionWithReceiveVeryParams;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.SortedSet;
@@ -15,8 +14,34 @@ public class CreateFunctionWithReceiveVeryParams {
         SortedSet<String> sortedMap = new TreeSet<String>();
         TreeSet<String> treeSet = new TreeSet<String>();
         int inteiro = 0;
-
         createFunctionWithReceiveVeryParams(string, sortedMap, treeSet, inteiro);
+
+        /*
+         * 1 Configure o total como zero
+         * 2 Configure o contador de notas como um
+         * 3
+         * 4 Enquanto contador de notas for menor ou igual a dez
+         * 5 Solicite para o usuário inserir a próxima nota
+         * 6 Insira a próxima nota
+         * 7 Adicione a nota ao total
+         * 8 Adicione um ao contador de notas
+         * 9
+         * 10 Configure a média da classe como o total dividido por dez
+         * 11 Exibe a média da classe
+         */
+
+        Scanner scanner = new Scanner(System.in);
+        int total = 0;
+        int gradeCounter = 1;
+        while (gradeCounter <= 10) {
+            System.out.println("result: " + total);
+            int grade = scanner.nextInt();
+            total = total + grade;
+            gradeCounter = gradeCounter + 1;
+        }
+        int average = total / 10;
+        System.out.println("Class average is " + average);
+        System.out.println("result: " + total);
 
     }
 
@@ -37,27 +62,6 @@ public class CreateFunctionWithReceiveVeryParams {
     public static void createFunctionWithReceiveVeryParams(List<String> string, SortedSet<String> sortedMap,
             TreeSet<String> treeSet, int inteiro) {
 
-        System.out.println("Número aleatório: " + inteiro);
-        inteiro = (int) (Math.random() * 100);
-
-        if (inteiro >= 0 && inteiro <= 70) {
-            System.out.println("Digite uma string: ");
-            Scanner scanner = new Scanner(System.in);
-            /* converte scanner em SortedMap e Adiciona o sortedMap a lista string */
-            string = new ArrayList<String>(Arrays.asList(scanner.nextLine()));
-            // string += 1;
-            sortedMap.add(string.get(0));
-            System.out.println("SortedMap: " + sortedMap);
-        } else {
-            if (inteiro >= 71 && inteiro <= 100) {
-                System.out.println("Digite uma string: ");
-                Scanner scanner = new Scanner(System.in);
-                /* converte scanner em TreeSet e Adiciona o treeSet a lista string */
-                string = new ArrayList<String>(Arrays.asList(scanner.nextLine()));
-                treeSet.add(string.get(0));
-                System.out.println("TreeSet: " + treeSet);
-            }
-        }
         System.out.println("Lista de strings: " + string);
     }
 

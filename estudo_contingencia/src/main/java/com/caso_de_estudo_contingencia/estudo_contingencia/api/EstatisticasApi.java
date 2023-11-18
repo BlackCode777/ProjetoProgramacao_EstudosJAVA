@@ -32,7 +32,7 @@ public class EstatisticasApi {
 
         try {
 
-            JSONObject filtros = new JSONObject(body);
+            JSONObject filtros = new JSONObject();
 
             Long inicio = (filtros.has("inicio") ? Long.valueOf(filtros.get("inicio").toString()) : 0L);
             Long fim = (filtros.has("fim") ? Long.valueOf(filtros.get("fim").toString()) : 0L);
