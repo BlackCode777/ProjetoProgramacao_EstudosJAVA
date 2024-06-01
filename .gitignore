@@ -1,0 +1,75 @@
+
+# Ignorando arquivos de configuração da pasta Java.V17_Sobrecarga
+Java.V17_Sobrecarga/.classpath
+Java.V17_Sobrecarga/.project
+Java.V17_Sobrecarga/.settings/
+
+# Pasta target de Java.V17_Sobrecarga/sobrecarga, .vscode, .mvn, HELP.md, mvnw.cmd, mvnw
+Java.V17_Sobrecarga/sobrecarga/target/
+Java.V17_Sobrecarga/sobrecarga/.vscode/
+Java.V17_Sobrecarga/sobrecarga/.mvn/
+Java.V17_Sobrecarga/sobrecarga/HELP.md
+Java.V17_Sobrecarga/sobrecarga/mvnw.cmd
+Java.V17_Sobrecarga/sobrecarga/mvnw
+
+*.pdf
+*.webp
+
+*.properties
+
+*.cmd
+
+*.log
+
+./HELP.md
+
+# Pasta target gerada pelo Maven
+target/
+
+# Arquivos gerados pelo Eclipse
+.classpath
+.project
+.settings/
+
+# Arquivos gerados pelo IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Arquivos gerados pelo NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Arquivos gerados pelo Visual Studio Code
+.vscode/
+
+# Arquivos gerados pelo Spring Tools Suite
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+
+# Arquivos gerados pelo Maven Wrapper
+
+!**/mvnw
+!**/mvnw.cmd
+!**/.mvn/wrapper/maven-wrapper.jar
+!**/.mvn/wrapper/maven-wrapper.properties
+
+# Arquivos gerados pelo Gradle Wrapper
+!**/gradlew
+!**/gradlew.bat
+!**/.gradle
+
+# Arquivos gerados pelo Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+
+
