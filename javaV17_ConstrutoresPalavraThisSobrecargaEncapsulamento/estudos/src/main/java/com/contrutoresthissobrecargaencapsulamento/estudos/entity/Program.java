@@ -40,5 +40,7 @@ public class Program {
         // product.
         // OK, agora entendi
 
+        sc.close(); // Fechando o Scanner
+
     }
 }

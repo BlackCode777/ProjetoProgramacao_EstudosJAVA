@@ -43,6 +43,8 @@ public class SomaDosVetores {
 
         System.out.println("Média dos números: " + avg);
 
+        sc.close();
+
     }
 
 }

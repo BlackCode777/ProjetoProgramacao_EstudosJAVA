@@ -1,4 +1,4 @@
-package com.estudosobrecarga.sobrecarga.ProfISIDRO_Exercicios_URI;
+package com.estudosobrecarga.sobrecarga.ProfISIDROExerciciosURI;
 
 public class CalculoDeSalario {
 

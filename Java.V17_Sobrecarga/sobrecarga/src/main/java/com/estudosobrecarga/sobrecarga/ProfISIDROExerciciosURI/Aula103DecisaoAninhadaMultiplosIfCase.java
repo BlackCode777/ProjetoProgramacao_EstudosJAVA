@@ -1,8 +1,8 @@
-package com.estudosobrecarga.sobrecarga.ProfISIDRO_Exercicios_URI;
+package com.estudosobrecarga.sobrecarga.ProfISIDROExerciciosURI;
 
 import java.util.Scanner;
 
-public class Aula_103_DecisaoAninhadaMultiplosIfCase {
+public class Aula103DecisaoAninhadaMultiplosIfCase {
 
     public static void main(String[] args) {
 
@@ -64,6 +64,7 @@ public class Aula_103_DecisaoAninhadaMultiplosIfCase {
                 break;
         }
 
+        teclado.close();
     }
 
 }

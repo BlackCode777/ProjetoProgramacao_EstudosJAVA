@@ -1,4 +1,4 @@
-package com.estudosobrecarga.sobrecarga.ProfISIDRO_Exercicios_URI;
+package com.estudosobrecarga.sobrecarga.ProfISIDROExerciciosURI;
 
 import java.util.Scanner;
 
@@ -45,6 +45,8 @@ public class SalarioMaisBonus {
 
         System.out.printf("NOme vendedor: " + nome + " ");
         System.out.printf("TOTAL = R$ %.2f\n", salarioTotal);
+
+        scanner.close();
 
     }
 
