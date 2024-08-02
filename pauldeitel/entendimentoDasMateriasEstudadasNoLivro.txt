@@ -1,0 +1,44 @@
+********************************************************
+************* Matérias Estudadas ***********************
+********************************************************
+Inferência de tipo com a notação <> - Notação Losango
+    - especificam o tipo armazenado na ArrayList (isto é, String) à esquerda e à direita das instruções de inicia-
+lização
+    EXEMPLO DE USO:
+        List<String> list = new ArrayList<>();
+
+# Algoritmos do ArrayList
+    - sort > Classifica os elementos de uma List.
+    - binarySearch > Localiza um objeto em uma List usando o algoritmo de pesquisa
+        binária de alto desempenho introduzido
+    - reverse > Inverte os elementos de uma List.
+    - shuffle > Ordena aleatoriamente os elementos de uma List.
+    - fill > Configura todo elemento List para referir-se a um objeto especificado.
+    - copy > Copia referências de uma List em outra.
+    - min > Retorna o menor elemento em uma Collection.
+    - max > Retorna o maior elemento em uma Collection.
+    - addAll > Acrescenta todos os elementos em um array a uma Collection.
+    - frequency > Calcula quantos elementos da coleção são iguais ao elemento especificado.
+    - disjoint > Acrescenta todos os elementos em um array a uma collection.
+
+    # DEFINIÇÂO DOS ALGORITMOS
+        - sort -
+        - Classificando na ordem crescente 
+        - Método Collections sort -> O método sort ordenar os elementos de uma List em ordem crescente,
+            O  método  sort  realiza  uma  classificação  por  intercalação  iterativa.
+            EXEMPLO : Collection.sort(list);
+
+    # 16.7.4  Método  binarySearch Algorithm
+        - Esse método localiza um objeto em uma List (por exemplo, uma LinkedList ou uma ArrayList). 
+            Se o objeto for encontrado, seu índice é retornado. Se o objeto não for localizado, 
+            binarySearch  retorna  um  valor  negativo.  O  método  binarySearch  determina  esse  
+            valor  negativo  primeiro  calculando  o  ponto  de inserção e tornando seu sinal negativo.
+            Então, binarySearch subtrai 1 do ponto de inserção para obter o valor de retorno, que 
+            garante que o método binarySearch retorna números positivos (>= 0) se e somente se o objeto 
+            for localizado.
+    # 16.8 Classe Stack do pacote java.util
+        - A classe Stack estende a classe Vector para implementar uma estrutura de dados de pilha. 
+        
+
+PAREI pagina 560
+

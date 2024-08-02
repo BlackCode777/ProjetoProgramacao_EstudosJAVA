@@ -2,6 +2,30 @@
         "configurations": [
                 {
                         "type": "java",
+                        "name": "App",
+                        "request": "launch",
+                        "mainClass": "com.bookpauldeitel.App"
+                },
+                {
+                        "type": "java",
+                        "name": "EstatisticasEventosApplication",
+                        "request": "launch",
+                        "mainClass": "com.estatisticas_eventos_fake.estatisticas_eventos.EstatisticasEventosApplication"
+                },
+                {
+                        "type": "java",
+                        "name": "App",
+                        "request": "launch",
+                        "mainClass": "$package.App"
+                },
+                {
+                        "type": "java",
+                        "name": "Section_2_A_Saida_basica_de_datas",
+                        "request": "launch",
+                        "mainClass": "DataEmJava_2.Section_2_A_Saida_basica_de_datas"
+                },
+                {
+                        "type": "java",
                         "name": "Spring Boot-PetscanfinderApplication<petscanfinder>",
                         "request": "launch",
                         "cwd": "${workspaceFolder}",
